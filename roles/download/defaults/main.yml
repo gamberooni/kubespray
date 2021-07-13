@@ -67,13 +67,13 @@ quay_image_repo: "quay.io"
 
 # TODO(mattymo): Move calico versions to roles/network_plugins/calico/defaults
 # after migration to container download
-calico_version: "v3.18.4"
+calico_version: "v3.19.1"
 calico_ctl_version: "{{ calico_version }}"
 calico_cni_version: "{{ calico_version }}"
 calico_flexvol_version: "{{ calico_version }}"
 calico_policy_version: "{{ calico_version }}"
 calico_typha_version: "{{ calico_version }}"
-typha_enabled: false
+typha_enabled: true
 
 flannel_version: "v0.13.0"
 cni_version: "v0.9.1"
@@ -85,7 +85,7 @@ kube_router_version: "v1.2.2"
 multus_version: "v3.7"
 ovn4nfv_ovn_image_version: "v1.0.0"
 ovn4nfv_k8s_plugin_image_version: "v1.1.0"
-helm_version: "v3.5.4"
+helm_version: "v3.6.2"
 nerdctl_version: "0.8.1"
 krew_version: "v0.4.1"
 
@@ -374,10 +374,13 @@ krew_archive_checksums:
 
 helm_archive_checksums:
   arm:
+    v3.6.2: 2c352e49fc2b962fe2f50e5ad4917c1c3ff40df4bb721637df18612ea025a755
     v3.5.4: 1a9cc09ef06db29a0232d265f73625056a0cb089e5a16b0a5ef8e810e0533157
   amd64:
+    v3.6.2: f3a4be96b8a3b61b14eec1a35072e1d6e695352e7a08751775abf77861a0bf54
     v3.5.4: a8ddb4e30435b5fd45308ecce5eaad676d64a5de9c89660b56face3fe990b318
   arm64:
+    v3.6.2: 957031f3c8cf21359065817c15c5226cb3082cac33547542a37cf3425f9fdcd5
     v3.5.4: 9db01522150a83a5d65b420171147448d8396c142d2c91af95e5ee77c1694176
 
 crun_checksums:
@@ -550,7 +553,7 @@ ingress_ambassador_image_repo: "{{ quay_image_repo }}/datawire/ambassador-operat
 ingress_ambassador_image_tag: "v1.2.9"
 alb_ingress_image_repo: "{{ docker_image_repo }}/amazon/aws-alb-ingress-controller"
 alb_ingress_image_tag: "v1.1.9"
-cert_manager_version: "v1.0.4"
+cert_manager_version: "v1.4.0"
 cert_manager_controller_image_repo: "{{ quay_image_repo }}/jetstack/cert-manager-controller"
 cert_manager_controller_image_tag: "{{ cert_manager_version }}"
 cert_manager_cainjector_image_repo: "{{ quay_image_repo }}/jetstack/cert-manager-cainjector"
